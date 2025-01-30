@@ -12,10 +12,15 @@ class SideMenu extends StatelessWidget {
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 10,
             children: [
               NavItem(
                 title: 'Our Service',
+                tapEvent: () {},
+              ),
+              NavItem(
+                title: 'About Us',
                 tapEvent: () {},
               ),
               NavItem(
@@ -24,10 +29,6 @@ class SideMenu extends StatelessWidget {
               ),
               NavItem(
                 title: 'Contact Us',
-                tapEvent: () {},
-              ),
-              NavItem(
-                title: 'About Us',
                 tapEvent: () {},
               ),
             ],

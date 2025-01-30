@@ -27,6 +27,7 @@ class Jumbotron extends StatelessWidget {
                 crossAxisAlignment: !isMobile(context)
                     ? CrossAxisAlignment.start
                     : CrossAxisAlignment.center,
+                spacing: 10,
                 children: <Widget>[
                   if (isMobile(context))
                     Image.asset(
@@ -35,41 +36,27 @@ class Jumbotron extends StatelessWidget {
                     ),
                   RichText(
                       text: TextSpan(children: [
-                    // TextSpan(
-                    //     text: 'The ',
-                    //     style: TextStyle(
-                    //         fontSize: isDesktop(context) ? 64 : 32,
-                    //         fontWeight: FontWeight.w800,
-                    //         color: kTextColor)),
                     TextSpan(
-                        text: 'One Stop Solution',
+                        text: kMainTitle,
                         style: TextStyle(
                             fontSize: isDesktop(context) ? 64 - 15 : 32,
                             fontWeight: FontWeight.w800,
                             color: kPrimaryColor)),
                   ])),
                   Text(
-                    'For All Your Tifl Needs!',
+                    kMainSubTitle,
                     style: TextStyle(
-                        fontSize: isDesktop(context) ? 64 - 25 : 32,
+                        fontSize: isDesktop(context) ? 64 - 25 : 22,
                         fontWeight: FontWeight.w800),
                   ),
-                  // Text(
-                  //   'Tifl Needs!',
-                  //   style: TextStyle(
-                  //       fontSize: isDesktop(context) ? 64 : 32,
-                  //       fontWeight: FontWeight.w800),
-                  // ),
-                  SizedBox(height: 10),
                   Text(
-                    'Help us in making this world a better place for pets.',
+                    kMainContent,
                     textAlign:
                         isMobile(context) ? TextAlign.center : TextAlign.start,
                     style: TextStyle(
-                        fontSize: isDesktop(context) ? 36 - 15 : 18,
+                        fontSize: isDesktop(context) ? 36 - 15 : 14,
                         fontWeight: FontWeight.w300),
                   ),
-                  SizedBox(height: 10),
                   Wrap(
                     runSpacing: 10,
                     children: <Widget>[

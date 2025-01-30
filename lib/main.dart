@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Tifl Tails',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-      ),
+          primaryColor: kPrimaryColor,
+          textTheme:
+              GoogleFonts.openSansTextTheme(Theme.of(context).textTheme)),
       home: HomeScreen(),
     );
   }

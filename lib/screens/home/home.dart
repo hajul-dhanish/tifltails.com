@@ -30,9 +30,7 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Header(),
-
                 Jumbotron(),
-
                 Footer()
               ],
             ),

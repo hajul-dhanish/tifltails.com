@@ -28,7 +28,8 @@ class DesktopFooter extends StatelessWidget {
           Expanded(
               flex: 1,
               child: Text(
-                '2025 | TiflTails | All Right Reserved',
+                kFooterText
+                ,
                 style: TextStyle(fontSize: 10),
               )),
           Expanded(
@@ -68,7 +69,7 @@ class MobileFooter extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            '2025 | TiflTails | All Right Reserved',
+            kFooterText,
             style: TextStyle(fontSize: 10),
           ),
           Wrap(

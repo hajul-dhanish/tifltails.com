@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/constants.dart';
 import 'package:flutter_web/responsive.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,15 +17,12 @@ class Header extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Image.asset(
-            'assets/images/logo.png',
-            width: 50,
+            appLogo,
+            width: 60,
           ),
-          SizedBox(width: 10),
           Text(
-            "Tifl Tails",
-            style: GoogleFonts.reenieBeanie(
-              fontSize: 18
-            ),
+            appName,
+            style: GoogleFonts.playfairDisplay(fontSize: 18),
           ),
           Spacer(),
           if (!isMobile(context))
@@ -35,6 +33,10 @@ class Header extends StatelessWidget {
                   tapEvent: () {},
                 ),
                 NavItem(
+                  title: 'About Us',
+                  tapEvent: () {},
+                ),
+                NavItem(
                   title: 'Donate',
                   tapEvent: () {},
                 ),
@@ -42,14 +44,6 @@ class Header extends StatelessWidget {
                   title: 'Contact Us',
                   tapEvent: () {},
                 ),
-                NavItem(
-                  title: 'About Us',
-                  tapEvent: () {},
-                ),
-                // NavItem(
-                //   title: 'Shop',
-                //   tapEvent: () {},
-                // ),
               ],
             ),
           if (isMobile(context))
