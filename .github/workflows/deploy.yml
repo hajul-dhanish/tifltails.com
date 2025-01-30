@@ -1,4 +1,4 @@
-name: Deploy it to GitHub Pages, uwu :)
+name: Deploy to tifltails.com
 
 on:
   push:
@@ -34,5 +34,4 @@ jobs:
       with:
         branch: gh-pages  # The branch you want to deploy to
         folder: build/web  # The folder to deploy (Flutter web build output)
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token to authenticate the action
+        token: ${{ secrets.GH_TOKEN }}  # Use the personal access token stored in GitHub secrets
