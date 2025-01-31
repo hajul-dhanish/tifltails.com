@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/components/main_button.dart';
-import 'package:flutter_web/responsive.dart';
+import 'package:TiflTails/components/main_button.dart';
+import 'package:TiflTails/responsive.dart';
 
 import '../../../constants.dart';
 

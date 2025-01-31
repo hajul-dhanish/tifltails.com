@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/constants.dart';
-import 'package:flutter_web/models/blog_model.dart';
-import 'package:flutter_web/responsive.dart';
+import 'package:TiflTails/constants.dart';
+import 'package:TiflTails/models/blog_model.dart';
+import 'package:TiflTails/responsive.dart';
 
 import 'components/blog_post.dart';
 import 'components/categories.dart';

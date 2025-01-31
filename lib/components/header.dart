@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/constants.dart';
-import 'package:flutter_web/responsive.dart';
+import 'package:TiflTails/constants.dart';
+import 'package:TiflTails/responsive.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'menu_item.dart';
