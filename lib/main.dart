@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/constants.dart';
-import 'package:flutter_web/screens/home/home_view.dart';
+import 'package:TiflTails/constants.dart';
+import 'package:TiflTails/screens/home/home_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {

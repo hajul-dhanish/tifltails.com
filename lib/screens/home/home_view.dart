@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/components/footer.dart';
-import 'package:flutter_web/components/header.dart';
-import 'package:flutter_web/components/side_menu.dart';
-import 'package:flutter_web/constants.dart';
-import 'package:flutter_web/responsive.dart';
-import 'package:flutter_web/screens/blog/blog_view.dart';
+import 'package:TiflTails/components/footer.dart';
+import 'package:TiflTails/components/header.dart';
+import 'package:TiflTails/components/side_menu.dart';
+import 'package:TiflTails/constants.dart';
+import 'package:TiflTails/responsive.dart';
+import 'package:TiflTails/screens/blog/blog_view.dart';
 
 import 'components/jumbotron.dart';
 

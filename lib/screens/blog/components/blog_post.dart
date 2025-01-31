@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/models/blog_model.dart';
-import 'package:flutter_web/responsive.dart';
+import 'package:TiflTails/models/blog_model.dart';
+import 'package:TiflTails/responsive.dart';
 import '../../../constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
