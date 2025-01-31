@@ -19,17 +19,18 @@ class Jumbotron extends StatelessWidget {
           children: <Widget>[
             Expanded(
                 child: Padding(
-              padding: EdgeInsets.only(right: !isMobile(context) ? 40 : 0),
+              padding: EdgeInsets.only(
+                  right: !Responsive.isMobile(context) ? 40 : 0),
               child: Column(
-                mainAxisAlignment: !isMobile(context)
+                mainAxisAlignment: !Responsive.isMobile(context)
                     ? MainAxisAlignment.start
                     : MainAxisAlignment.center,
-                crossAxisAlignment: !isMobile(context)
+                crossAxisAlignment: !Responsive.isMobile(context)
                     ? CrossAxisAlignment.start
                     : CrossAxisAlignment.center,
                 spacing: 10,
                 children: <Widget>[
-                  if (isMobile(context))
+                  if (Responsive.isMobile(context))
                     Image.asset(
                       'assets/images/main.png',
                       height: size.height * 0.3,
@@ -39,44 +40,51 @@ class Jumbotron extends StatelessWidget {
                     TextSpan(
                         text: kMainTitle,
                         style: TextStyle(
-                            fontSize: isDesktop(context) ? 64 - 15 : 32,
+                            fontSize:
+                                Responsive.isDesktop(context) ? 64 - 15 : 32,
                             fontWeight: FontWeight.w800,
                             color: kPrimaryColor)),
                   ])),
                   Text(
                     kMainSubTitle,
                     style: TextStyle(
-                        fontSize: isDesktop(context) ? 64 - 25 : 22,
+                        fontSize: Responsive.isDesktop(context) ? 64 - 25 : 22,
                         fontWeight: FontWeight.w800),
                   ),
                   Text(
                     kMainContent,
-                    textAlign:
-                        isMobile(context) ? TextAlign.center : TextAlign.start,
+                    textAlign: Responsive.isMobile(context)
+                        ? TextAlign.center
+                        : TextAlign.start,
                     style: TextStyle(
-                        fontSize: isDesktop(context) ? 36 - 15 : 14,
+                        fontSize: Responsive.isDesktop(context) ? 36 - 15 : 14,
                         fontWeight: FontWeight.w300),
                   ),
-                  Wrap(
-                    runSpacing: 10,
-                    children: <Widget>[
-                      MainButton(
-                        title: 'Available soon',
-                        color: kPrimaryColor,
-                        tapEvent: () {},
-                      ),
-                      SizedBox(width: 10),
-                      MainButton(
-                        title: 'Learn More',
-                        color: kSecondaryColor,
-                        tapEvent: () {},
-                      )
-                    ],
-                  )
+                  MainButton(
+                    title: 'Available soon',
+                    color: kPrimaryColor,
+                    tapEvent: () {},
+                  ),
+                  // Wrap(
+                  //   runSpacing: 10,
+                  //   spacing: 10,
+                  //   children: <Widget>[
+                  //     MainButton(
+                  //       title: 'Available soon',
+                  //       color: kPrimaryColor,
+                  //       tapEvent: () {},
+                  //     ),
+                  //     MainButton(
+                  //       title: 'Learn More',
+                  //       color: kSecondaryColor,
+                  //       tapEvent: () {},
+                  //     )
+                  //   ],
+                  // )
                 ],
               ),
             )),
-            if (isDesktop(context) || isTab(context))
+            if (Responsive.isDesktop(context) || Responsive.isTablet(context))
               Expanded(
                   child: Image.asset(
                 'assets/images/main.png',

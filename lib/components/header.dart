@@ -25,7 +25,7 @@ class Header extends StatelessWidget {
             style: GoogleFonts.playfairDisplay(fontSize: 18),
           ),
           Spacer(),
-          if (!isMobile(context))
+          if (!Responsive.isMobile(context))
             Row(
               children: [
                 NavItem(
@@ -46,7 +46,7 @@ class Header extends StatelessWidget {
                 ),
               ],
             ),
-          if (isMobile(context))
+          if (Responsive.isMobile(context))
             IconButton(
                 icon: Icon(Icons.menu),
                 onPressed: () {
