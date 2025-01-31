@@ -10,7 +10,7 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (!isMobile(context)) ? DesktopFooter() : MobileFooter();
+    return (!Responsive.isMobile(context)) ? DesktopFooter() : MobileFooter();
   }
 }
 
@@ -28,8 +28,7 @@ class DesktopFooter extends StatelessWidget {
           Expanded(
               flex: 1,
               child: Text(
-                kFooterText
-                ,
+                kFooterText,
                 style: TextStyle(fontSize: 10),
               )),
           Expanded(

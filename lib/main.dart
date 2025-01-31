@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/constants.dart';
-import 'package:flutter_web/screens/home/home.dart';
+import 'package:flutter_web/screens/home/home_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -15,9 +15,13 @@ class MyApp extends StatelessWidget {
       title: 'Tifl Tails',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: kPrimaryColor,
-          textTheme:
-              GoogleFonts.openSansTextTheme(Theme.of(context).textTheme)),
+        primaryColor: kPrimaryColor,
+        textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
+        scaffoldBackgroundColor: kBgColor,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: TextButton.styleFrom(backgroundColor: kPrimaryColor),
+        ),
+      ),
       home: HomeScreen(),
     );
   }
