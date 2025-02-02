@@ -1,9 +1,15 @@
+import 'package:TiflTails/data/supabase.dart';
 import 'package:flutter/material.dart';
 import 'package:TiflTails/constants.dart';
 import 'package:TiflTails/screens/home/home_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  await Supabase.initialize(
+    url: SupabaseService.initializeUrl,
+    anonKey: SupabaseService.anonKey,
+  );
   runApp(MyApp());
 }
 
