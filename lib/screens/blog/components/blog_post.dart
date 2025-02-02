@@ -1,11 +1,11 @@
+import 'package:TiflTails/model/blogs_model.dart';
 import 'package:flutter/material.dart';
-import 'package:TiflTails/models/blog_model.dart';
 import 'package:TiflTails/responsive.dart';
 import '../../../constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BlogPostCard extends StatelessWidget {
-  final Blog blog;
+  final BlogsModel blog;
   const BlogPostCard({
     Key? key,
     required this.blog,
@@ -20,7 +20,7 @@ class BlogPostCard extends StatelessWidget {
           AspectRatio(
             aspectRatio: 1.78,
             child: Image.asset(
-              blog.image!,
+              blog.img ?? "assets/images/winterdog.jpg",
               fit: BoxFit.fill,
             ),
           ),
@@ -39,7 +39,7 @@ class BlogPostCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Design".toUpperCase(),
+                      blog.category!.toUpperCase(),
                       style: TextStyle(
                         color: kDarkBlackColor,
                         fontSize: 12,
@@ -48,7 +48,7 @@ class BlogPostCard extends StatelessWidget {
                     ),
                     SizedBox(width: kDefaultPadding),
                     Text(
-                      blog.date!,
+                      blog.createdAt!,
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
@@ -70,7 +70,7 @@ class BlogPostCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  blog.description!,
+                  blog.content!,
                   maxLines: 4,
                   style: TextStyle(height: 1.5),
                 ),

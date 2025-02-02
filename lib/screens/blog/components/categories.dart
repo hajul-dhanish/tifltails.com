@@ -1,11 +1,14 @@
+import 'package:TiflTails/model/category_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import 'sidebar_container.dart';
 
 class Categories extends StatelessWidget {
+  final List<CategoryModel> categoryList;
   const Categories({
     Key? key,
+    required this.categoryList,
   }) : super(key: key);
 
   @override
@@ -14,38 +17,14 @@ class Categories extends StatelessWidget {
       title: "Categories",
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Category(
-            title: 'Dog Health',
-            numOfItems: 3,
+        children: List.generate(
+          categoryList.length,
+          (index) => Category(
+            title: categoryList[index].CategoryName,
+            numOfItems: categoryList[index].Count,
             press: () {},
           ),
-          Category(
-            title: 'Pet Adoption',
-            numOfItems: 4,
-            press: () {},
-          ),
-          Category(
-            title: 'Training & Behavior',
-            numOfItems: 10,
-            press: () {},
-          ),
-          Category(
-            title: 'Dog Breeds',
-            numOfItems: 18,
-            press: () {},
-          ),
-          Category(
-            title: 'Pet Nutrition',
-            numOfItems: 12,
-            press: () {},
-          ),
-          Category(
-            title: 'Grooming & Care',
-            numOfItems: 8,
-            press: () {},
-          ),
-        ],
+        ),
       ),
     );
   }
