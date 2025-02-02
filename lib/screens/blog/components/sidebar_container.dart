@@ -1,3 +1,4 @@
+import 'package:TiflTails/responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -17,7 +18,7 @@ class SidebarContainer extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(kDefaultPadding),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Responsive.isMobile(context) ? Colors.transparent : Colors.white,
         borderRadius: BorderRadius.all(
           Radius.circular(kDefaultPadding / 4),
         ),
@@ -25,14 +26,16 @@ class SidebarContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: TextStyle(
-              color: kDarkBlackColor,
-              fontWeight: FontWeight.w600,
+          if (!Responsive.isMobile(context)) ...[
+            Text(
+              title,
+              style: TextStyle(
+                color: kDarkBlackColor,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-          SizedBox(height: kDefaultPadding / 2), //10
+            SizedBox(height: kDefaultPadding / 2), //10
+          ],
           child,
         ],
       ),
