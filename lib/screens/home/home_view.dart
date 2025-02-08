@@ -29,21 +29,26 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 Header(),
                 Jumbotron(),
-                Container(
-                  padding: EdgeInsets.all(kDefaultPadding),
-                  constraints: BoxConstraints(maxWidth: kMaxWidth),
-                  child: Text(
-                    "Blogs and feeds",
-                    style: TextStyle(
-                        fontSize: Responsive.isDesktop(context) ? 64 - 15 : 32,
-                        fontWeight: FontWeight.w600,
-                        color: kDarkBlackColor),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(kDefaultPadding),
+                    constraints: BoxConstraints(maxWidth: kMaxWidth),
+                    child: Text(
+                      "Blogs and feeds",
+                      style: TextStyle(
+                          fontSize:
+                              Responsive.isDesktop(context) ? 64 - 15 : 32,
+                          fontWeight: FontWeight.w600,
+                          color: kDarkBlackColor),
+                    ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(kDefaultPadding),
-                  constraints: BoxConstraints(maxWidth: kMaxWidth),
-                  child: BlogView(),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(kDefaultPadding),
+                    constraints: BoxConstraints(maxWidth: kMaxWidth),
+                    child: BlogView(),
+                  ),
                 ),
                 Footer(),
               ],

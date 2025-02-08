@@ -39,33 +39,47 @@ class _BlogViewState extends State<BlogView> {
             return Center(child: Utils.loader(context));
           } else if (viewModel.blogsModel.status == Status.COMPLETED) {
             var data = viewModel.blogsModel.data ?? [];
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            return Column(
+              spacing: 10,
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: List.generate(
-                      data.length,
-                      (index) => BlogPostCard(blog: data[index]),
-                    ),
+                if (Responsive.isMobile(context))
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(child: Search()),
+                    ],
                   ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        children: List.generate(
+                          data.length,
+                          (index) => BlogPostCard(blog: data[index]),
+                        ),
+                      ),
+                    ),
+                    if (!Responsive.isMobile(context))
+                      SizedBox(width: kDefaultPadding),
+                    // Sidebar
+                    if (!Responsive.isMobile(context))
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Search(),
+                            SizedBox(height: kDefaultPadding),
+                            Categories(
+                              categoryList: viewModel.categoryList,
+                            ),
+                            SizedBox(height: kDefaultPadding),
+                            RecentPosts(),
+                          ],
+                        ),
+                      ),
+                  ],
                 ),
-                if (!Responsive.isMobile(context))
-                  SizedBox(width: kDefaultPadding),
-                // Sidebar
-                if (!Responsive.isMobile(context))
-                  Expanded(
-                    child: Column(
-                      children: [
-                        Search(),
-                        SizedBox(height: kDefaultPadding),
-                        Categories(categoryList: viewModel.categoryList,),
-                        SizedBox(height: kDefaultPadding),
-                        RecentPosts(),
-                      ],
-                    ),
-                  ),
               ],
             );
           } else {
