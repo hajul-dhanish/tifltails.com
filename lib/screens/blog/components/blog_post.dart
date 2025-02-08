@@ -1,4 +1,5 @@
 import 'package:TiflTails/model/blogs_model.dart';
+import 'package:TiflTails/screens/blog/blog_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:TiflTails/responsive.dart';
 import '../../../constants.dart';
@@ -13,16 +14,22 @@ class BlogPostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Image image = (blog.img != null && blog.img != "null")
+        ? Image.network(
+            blog.img!,
+            fit: BoxFit.fill,
+          )
+        : Image.asset(
+            "assets/images/winterdog.jpg",
+            fit: BoxFit.fill,
+          );
     return Padding(
       padding: const EdgeInsets.only(bottom: kDefaultPadding),
       child: Column(
         children: [
           AspectRatio(
             aspectRatio: 1.78,
-            child: Image.asset(
-              blog.img ?? "assets/images/winterdog.jpg",
-              fit: BoxFit.fill,
-            ),
+            child: image,
           ),
           Container(
             padding: EdgeInsets.all(kDefaultPadding),
@@ -78,7 +85,17 @@ class BlogPostCard extends StatelessWidget {
                 Row(
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlogPreviewView(
+                                image: image,
+                                title: blog.title!,
+                                markdown: blog.content!),
+                          ),
+                        );
+                      },
                       child: Container(
                         padding: EdgeInsets.only(bottom: kDefaultPadding / 4),
                         decoration: BoxDecoration(
