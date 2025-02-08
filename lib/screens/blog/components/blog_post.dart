@@ -14,15 +14,17 @@ class BlogPostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Image errImage = Image.asset(
+      "assets/images/winterdog.jpg",
+      fit: BoxFit.fill,
+    );
     Image image = (blog.img != null && blog.img != "null")
         ? Image.network(
             blog.img!,
             fit: BoxFit.fill,
+            errorBuilder: (context, error, stackTrace) => errImage,
           )
-        : Image.asset(
-            "assets/images/winterdog.jpg",
-            fit: BoxFit.fill,
-          );
+        : errImage;
     return Padding(
       padding: const EdgeInsets.only(bottom: kDefaultPadding),
       child: Column(

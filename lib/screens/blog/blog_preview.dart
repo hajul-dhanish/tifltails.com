@@ -76,7 +76,10 @@ class _BlogPreviewViewState extends State<BlogPreviewView> {
           ),
           widget.image,
           MarkdownParse(
-              shrinkWrap: true, selectable: true, data: widget.markdown),
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              selectable: true,
+              data: widget.markdown),
         ],
       ),
     );
