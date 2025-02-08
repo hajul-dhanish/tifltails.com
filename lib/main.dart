@@ -5,6 +5,8 @@ import 'package:TiflTails/screens/home/home_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+final String releaseVersion = "v0.1.25020800.pv";
+
 Future<void> main() async {
   await Supabase.initialize(
     url: SupabaseService.initializeUrl,

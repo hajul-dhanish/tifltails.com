@@ -1,3 +1,4 @@
+import 'package:TiflTails/main.dart';
 import 'package:flutter/material.dart';
 
 // const kPrimaryColor = Color(0XFF88C54D);
@@ -16,7 +17,7 @@ const kDefaultDuration = Duration(milliseconds: 250);
 final String appName = "Tifl Tails";
 final String appLogo = "assets/images/logo.png";
 final String currentYear = DateTime.now().year.toString();
-final String kFooterText = '@$currentYear | $appName production';
+final String kFooterText = '@$currentYear | $appName production | $releaseVersion';
 
 final String kMainTitle = "One Stop Solution";
 final String kMainSubTitle = "for all our tifl needs!";
